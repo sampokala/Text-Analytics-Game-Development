@@ -1,0 +1,353 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# ~~~
+# 
+# ██████╗ ██████╗  █████╗ ██╗  ██╗███╗   ███╗ █████╗ ███████╗████████╗██████╗  █████╗ 
+# ██╔══██╗██╔══██╗██╔══██╗██║  ██║████╗ ████║██╔══██╗██╔════╝╚══██╔══╝██╔══██╗██╔══██╗
+# ██████╔╝██████╔╝███████║███████║██╔████╔██║███████║███████╗   ██║   ██████╔╝███████║
+# ██╔══██╗██╔══██╗██╔══██║██╔══██║██║╚██╔╝██║██╔══██║╚════██║   ██║   ██╔══██╗██╔══██║
+# ██████╔╝██║  ██║██║  ██║██║  ██║██║ ╚═╝ ██║██║  ██║███████║   ██║   ██║  ██║██║  ██║
+# ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝
+#                                                                                     
+#                                                                                     
+# ~~~
+# 
+#                                                                                     
+#        Welcome to the most adventure game Brahmastra : the treasure of power!!
+#                                                                                     
+#                                                                                     
+# 
+
+# #Description of the movie:
+# 
+# In ancient India people of Brahmansh community would take care of their spiritual weapon Brahmastra, which is the power of all weapons and have the power to control the whole universe. Shiva who has the power to play with fire 🔥🔥is the hero of the game who tries to collect all the parts of Brahmastra from the villains Junoon and her team by collecting different powerful weapons in each stage by travelling around India. The game starts with stage 1 which is collecting the first weapon Vanara Astram 🐵(power of monkeys) from the villains, defeating them, you get the first piece of the brahmastra, following to the stage 2 where you escape from the villain and go to Varanasi, India to meet Anish Shetty a scientist who have the second weapon Nandi Astram 🐄 (power of 1000 bulls), with the help of this weapon he defeats the villain and enter into third stage where he travel to Shivalayam which is situated in Himalayas, northern India, Shiva meets the head of the Brahmansh, the place where all the weapons are created and collect the most powerful weapon Prabha Astram 🔪 (power of knives). Finally, he enters the fourth stage where goes to Kashmir to collect the last part of the Brahmastra. At end in the final stage, hero wins joining the three parts of Brahmastra defeating the negativity. The hero loses the game if he hand overs or loses the three parts of the weapon in any stage.
+# References:
+# 1.	https://www.imdb.com/title/tt6277462/plotsummary?ref_=tt_stry_pl #link to the plot summary
+# 2.	https://www.disneyplus.com/movies/brahmastra-part-one-shiva/4Uq5y1k4adyD #link to the movie
+# 
+
+# In[13]:
+
+
+# Lets start the adventure, welcome to the world of brahmansh you are playing the role of hero: Shiva
+import random # importing random package for randomizing the created lists and numbers
+import sys #importing sys package for handling fail function
+
+#using the input function to start the game asking the user y/n to begin the game
+Brahmansh = input(prompt = """Brahmansh is set, Shiva is ready to collect the missing weapons, 
+are you ready to play the game input yes/no : \n""")
+
+#using lower function to give the input option of both cases and converts to lower
+Brahmansh = Brahmansh.lower()
+
+
+if 'yes' in Brahmansh : # clicks yes or YES enters into the game
+    print("Game begins, welcome to Mumbai the place where Brahmastra started\n")
+elif Brahmansh == 'no'or Brahmansh == 'NO': #if the user doesnt want to play, click no to exit
+    print("That's sad, Shiva cant collect the weapons \n")
+    fail() #calling the function to exit
+else:
+    print("That wasn't a proper input. You should answer 'yes'or'no', please try again ") # throws a warning to enter a valid input
+    fail() #if the user doesnt put proper input it fails
+    
+def fail(): #defining the fail function
+    print("You've failed")
+    #input('<Press any key to exit>\n')
+    sys.exit('Thanks for playing') #system exits and prints
+    #raise StopExecution 
+    
+    
+def Mumbai(): #stage 1 of the game
+    print("you are in Mumbai Shiva\n") #place is Mumbai
+    input(prompt = '<Press any key to achieve the first weapon vanara asthram, you need to fight with the villians> \n')
+
+    Weapons = ['Knives','Sword','Gun','Bow and Arrow'] #list of weapons
+
+    Action = input(prompt = "click anything and enter to collect the weapon to fight with villian\n")
+
+    weapon = print(random.choice(Weapons)) #randomising the list
+
+    Choose_ride = input(prompt= """villain is still following you, 
+    
+    what kind of ride you want to choose to escape to Varnasi and collect the next weapon? plane/car/bike?:\n """)
+
+    #initialising the if-elif-else clauses for three means of rides
+    if 'plane' in Choose_ride or 'PLANE' in Choose_ride:
+        print("\n Your plane is ready to run on air......lets gooo\n")
+
+       
+
+    elif 'car' in Choose_ride.casefold(): 
+         print("\n The car is ready please drive fast to reach Varnasi on time \n")
+    
+    #telling the rider to choose bike and telling him to reach the destination quick   
+    
+    elif Choose_ride.casefold() == 'bike':
+        print("\n Your bike is ready please ride fast \n")
+        
+    #if the user doesnt enter the rides mentioned it goes to the else clause   
+    else:
+        print("Enter the correct ride")
+        fail() #fail if the user type anything else except the given options
+    
+    #ascii code is created for vanara which means power of monkeys
+    print("""Congratulations you have collected the first weapon Vanara asthram 
+    
+                                              %
+@                                   /# &&@&%%& &                               %
+@                                    ,&#(**/&@&%                               %
+@                                    &&*#,/.*%&%                               %
+@                                     @##,#%&&&&                               %
+@                                     (*@@@&&#(                                %
+@                                  .#&&#(%%(#%&                                %
+@                               .%&%%%&%%##%#%%%%%*     %                      %
+@                   #%,       ,&&&&&&&&&&%#%%###%#%    %                       %
+@               /#*%(&%#(#     &@&&@&&&&#%%&&@&%%%&   .%                       %
+@                       #&&&&@@@%%%%#%&&&&&@@@&&&%%    %%                      %
+@                          %&@@@%%%###/#%@@ #@&&&&&(    (#,                    %
+@                           @@@@&%%%&%##&@     *&##&#     .%#*                 %
+@                          %&@@@@%%%&%#*(&@@     &##%%.       &%               %
+@                         .&&&&@&&&&&&%#%&&&&&    &&##%#        %%             %
+@                         &&&%% @@@&&##&%#%##&@&    &%##%&       #%            %
+@                        &&%#&,&@@@&%%&%&##%##&@&     &&%(%(%     %#           %
+@                      (&%%%&&%&@&@&%%%%&%###(#&&%/    .##%,%#    &%           %
+@                     %%#%%&%(%&&&&&%&%%&%%%%#%&&%&#      &&#& /  &#.          %
+@                     %# &&&&&&&@&&&%&&&&&%%%%%&&&&%%     ,%%##*  %#           %
+@                             &&&&@@&&&&&&%%%%%%&%/,&%#       ##,%#            %
+@                             @&@&@@&&@&&&&%&%&%&%&  .&%%#    #%*#             %
+@                             &&@&@@@&&@@&&&&&&&&&&      ./(//, %(             %
+@                             &@@&@&%&&@&%#&&(%&&%&(              (            %
+@                             #&&&@&%@@@@&&@&&&&&&&#                ,          %
+@                             #&&@@&%&@@@&&@&&&#%&&&&                .         %
+@                             %&&&@%#&&&&%&@&&@&&&%@/                #         %
+@                             (&&&&&&&@@@&&@&&&%&@%%#                          %
+@                              ,&&%%%@@@&&%@&&&/@&%&%                          %
+@                              .&&&&%&  (%%     (&&&%                          %
+@                                &&&@@           @&&%                          %
+@                                (&%%%           &&&%                          %
+@                                 &&&&           @%&&,                         %
+@                              &&&&&%%&*          @/% 
+
+
+and first part of Brahmastra and reached Varnasi""") #here the stage 1 ends and stage 2 begins
+
+
+def Varanasi():#stage 2
+    print('----------------------------------------------------------------------------------------------------------------------')
+    print("""Welcome to Varanasi Shiva, your next goal is to find the 
+    second part of brahmastra and find the second powerful weapon\n""")
+    
+    #initialising the tasks for the user to understand playing the role of shive (hero)
+    print("To collect the second weapon nandi asthram you need to meet a scientist and unlock a code\n")
+    
+    while True: #initiate the while loop
+        try: #entering the valid input in try block
+            user_input = int(input(prompt = "Enter an even number to unlock code: "))
+            if user_input > 0 and user_input % 2 == 0:
+                print("Thank you for entering an even number code is unlocked, you won the second weapon.\n")
+                break #break the loop and goes to the next stage
+            else:
+                print("The number you entered is not even. You lost the weapon and Brahmastra.\n")
+                fail()
+        except ValueError: #catches the errors and handles the errors
+            print("Invalid input. Please enter a valid number not an alphabet or other symbols.\n")
+   
+    print('----------------------------------------------------------------------------------------------------------------------')
+    print("Now to reach to the second part of the Brahmastra Shiva needs to solve a riddle\n")
+    
+
+    riddles = { #second part of the 2 nd stage 
+    "What weapon has the power of 1000 bulls, hint is nandi 🐄":"nandi",
+    "I am not alive, but I grow; ;I don't have a mouth, but water kills me. I am your power Shiva 🔥🔥 What am I?": "fire",
+    "I am not alive, but I can die. I don't have wings, but I can fly. I don't have eyes, but I can see 🌊🌊. What am I?": "storm",
+     } #created a dictionary for storing the riddles
+
+    score = 0
+
+    for i in range(3): # for loop for iteration of i value
+        question = random.choice(list(riddles.keys())) #randomizing the riddles using random
+        answer = input(prompt = question + ": ")
+        if answer.casefold() == riddles[question]:
+            print("Correct!")
+            score += 1 #if the answer is correct the score gets added
+        else:
+            print("Incorrect. The answer is " + riddles[question])
+
+        print("Your score is: " + str(score) + "/3") #calculate and print's your score
+        
+    if score >= 2: #if you score more than or equal to 2 you win
+        print("You have unlock the code and won the second part of Brahmastra\n")
+        
+        print("""Congratulations you have collected the second powerfull weapon nandi asthram 
+                                                                                       
+@              @.@                                              @ @             
+@             %  @*                                            #@, /            
+@           #,@@@@                                              @@@@./          
+@         ##@@@@%                                                &@@@@/&        
+@       &@@@@,@                                                    @(@@@@@      
+@      @ @@/ @@.                  #@@@@&  &@@@@(                  ,@@ &@@ @     
+@      @&@@            .   #@@,@@@.    *,.,    .@@@*@@(   .            @@#@     
+@       @%&@@@/     *#(#@@@@*/@@@                @@@.#@@@&#(#,     (@@@%#@      
+@          @* #@@@@@@@@@@@@@@&.. (,(         ./*( ..@@@@@@@@@@@@@@@( /@         
+@                  ./&@@@@@@@@@(        @%        #@@@@@@@@@&*                  
+@          /@ &@&&@# *@@@@@ ,     /  (      ,  #     , @@@@@, %@&&@% @,         
+@       @.@@@*   .#@@&. , @/@&#*      .@  @       (/@@(@ . ,@@@#    /@@@ &      
+@     @  ,       #@@@@@@@   @% @ @@@@@@%@@(@@@@@@ @ @@   @@@@@@@(       ,  @    
+@        @&        ,#.@#/@  . #,@@@@&@      @@@@@@.#    @,&@ #.       .&@       
+@                       @.@.  #@@@@%          @@@@@(  *@ #                      
+@                        &*@%.    @*   ,,,,   #@ *  .&@.@                       
+@                          @@(% @&&            /%@ (#@@                         
+@                           @@@& @@@@, @@@@ *@@@@ @@@@                          
+@                            ,@@*    ,@&  @@.    #@@.                           
+@                             @. @@&@  @@@&  &@@@,*@                            
+@                             ( (&@@/@@@@@@@@,@@%% /                            
+@                             .#@*,@@@@@@@@@@@@,/@&/                            
+@                             %@@%   %@@@@@@#   @@&&                            
+@                                ,@@@@      @@@@                                
+@                                    @@(,,#@@                                   
+@ 
+and the second peice of brahmastra and reached Shivalayam Himalayas\n""") 
+#ascii code created for nandi which is bull
+    else:
+        pass #pass statement to not disturb the else clause effecting if statement to pass nothing
+#if the score is less than or equal to 1 you fail the level
+    if score <= 1:
+            print("You have not won Brahmastra and the game ends")
+            fail() #u fail the level and quit the game
+    else:
+        pass #initialising the pass command
+    
+print("---------------------------------------------------------------------------------------------------")
+
+#defining the function
+def Himalayas(): #stage 3 begins
+    print("""Welcome to Himalayas Shiva, your target now is to take the last piece of Brahmastra,
+    
+by unlocking the box else bomb will expload in the box\n""") 
+  
+    print("You have 2 attempts to diffuse the bomb.") #instructing the user about attempts
+
+    for i in range(3): # 3 attempts for clearing
+        try:
+            guess = input(prompt = "Enter the password by solving (9 + (5 * 6)): ")
+            guess = float(guess)
+            
+            if guess == 39:
+                print("Congratulations! You have successfully diffused the bomb.\n")
+                
+                print("""Congratulations Shiva for unlocking the Brahmastra and collecting all the parts, 
+                      your the king of Power now!!\n""")
+                break
+            else:
+                print("Incorrect password. Attempts remaining:", 2-i) #number of attempts remaining
+
+            if i == 2: #when the number of interations is at the end (0,1,2 :3 attempts)
+                
+                print("Sorry, you have run out of attempts. The bomb exploded, end.\n")
+                break
+                fail() #if you run out of attempts fail function initialise, the code breaks and quits the game 
+            else:
+                pass
+        except ValueError:
+                print("Input should be a number\n") #warns to put a valid input
+           
+        
+    print("---------------------------------------------------------------------------------------------------")
+
+def Kashmir(): # stage 4 befins by defining the function
+    print("Welcome to Kashmir, the main place of Brahmansh, to collect the final and most powerful weapon")
+    
+    print("you need to defeat the villain for good and collect all the weapons together\n")
+    
+    while 'r' or 'R':
+    # get the user's input to roll the dice
+        roll = input(prompt = "Press 'r' to roll the dice: ") #telling the user to press r to begin the game
+        if roll == 'r' or roll == 'R':
+            # roll the dice and print the result
+            result = random.randint(1,6) #randomizing the result when dice is thrown
+            print("You rolled a", result)
+        
+            if result >= 4: #establishing a condition if the result is greater or equal to 4 you win
+                print("You won the most powerful weapon prabha asthram\n ")
+
+                prabha_asthram = input(prompt = "Press enter to unlock the asthram\n\n") #input function to unclock the weapon
+                print("""                         ,@@*            
+                                                              &@@@@@            
+                                                           ,@@@,,#@@            
+                                                         &@@#,,,,#@@            
+                                                      ,@@@,,,,,,,&@@            
+                                                    &@@#,,,,,,,,.@@,            
+                                                 ,@@@,,,,,,,,,,,#@@             
+                                               @@@#,,,,,,,,,,,,,@@*             
+                                            *@@@,,,#@@/,,,,,,,,@@%              
+                                          @@@#,,/@,,,,,,,,,,,,@@@               
+                                       *@@@,,,@@@(,,,,,,,,,,,@@@                
+                                     @@@(,,(@@@,,,,,,,,,,,,,@@#                
+                                  /@@@,,,@@@(,,,,,,,,,,,,,&@@                   
+                                @@@(,,(@@@,,,,,,,,,,,,,,(@@(                    
+                             /@@@@,,,/@/,,,,,,,,,,,,,,/@@%                      
+                           @@@%##@@@/,,,,,,,,,,,,,,,(@@%                        
+                        /@@@#######&@@@,,,,,,,,,,,#@@#                          
+                      @@@%###########%@@@/,,,,,,#@@(                            
+                   /@@@############@@@( (@@@,,%@@(                              
+                 @@@%###########%@@@       @@@@/                                
+              (@@@############@@@/                                              
+            @@@%###########%@@@                                                 
+           (@@@##########@@@/                                                   
+              @@@@@@@@@@@@   
+                                               /%&%( 
+
+
+
+The normal knife turns into a big powerful weapon 
+                                               
+                                                                  &&&&&&&&&&&&  
+                                                               .&&&&&#*&&&&&&&&&
+                                                             (&&&&&&&&&&&&    , 
+                                                           &&&&&&&&&&&&*        
+                                                        .&&&&&&#&&&&&.          
+                                                      #&&&&&&&&&&&&             
+                                                    &&&&&&&&&&&&&               
+                                       .**,  ,**  &&&&&&(/&&&&&                 
+                                              ...**&&&&&&&&&&                   
+                                            .......,**&&&&&                     
+                                          ............,**                       
+                                        .................,**     ..             
+                                     ............****,.      ****               
+                                   ............*****                            
+                                 ............*****.                             
+                              .............*****,                               
+                            .............*****,                                 
+                          .............,*****                                   
+                       ..............,*****                                     
+                     ..............,*****                                       
+                   ..............,*****                                         
+                 ,.............******                                           
+                ,............******                                             
+              .............*****.                                               
+             *..........******                                                  
+           .,........,*****,                                                    
+          *.......*******                                                       
+        *....********.          
+                    .                     \n""") #the normal knife turns to the prabha weapon which means power of knifes
+                
+                print("Shiva won the Brahmastra Game, Thanks for playing\n")
+                break # breaks the code if all stages are cleared
+            elif result < 4: # condition when the result is less than 4 you lost try again
+                print("You lost the weapon, please try again")
+            else: 
+                print("Invalid input") #if the input is other than the required one it throws an error 
+Mumbai()        
+Varanasi() #calling the functions of each stage to run them and execute
+Himalayas()
+Kashmir()
+
+    
+
+
+# In[ ]:
+
+
+
+
